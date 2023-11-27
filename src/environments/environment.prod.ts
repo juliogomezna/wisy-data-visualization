@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  weatherUrl: 'https://api.weather.gov/gridpoints/'
 };

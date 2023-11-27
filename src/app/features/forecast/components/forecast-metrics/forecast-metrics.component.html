@@ -1,0 +1,20 @@
+<mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile
+      (click)="null"
+      [colspan]="4"
+      [rowspan]="1">
+      <h1>Forecast Weather metrics</h1>
+  </mat-grid-tile>
+  <mat-grid-tile
+      *ngFor="let forecast of forecastItems;let i= index;"
+      [colspan]="2"
+      [rowspan]="4">
+      <wisy-card-stat
+          [title]="forecast.title"
+          [data]="null"
+          [id]="i+1"
+          [imageUrl]="forecast.image"
+          [code]="forecast.code"
+      ></wisy-card-stat>
+  </mat-grid-tile>
+</mat-grid-list>

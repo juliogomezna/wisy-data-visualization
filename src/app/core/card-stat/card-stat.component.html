@@ -1,0 +1,5 @@
+<div *ngIf="id">
+    <span><h4><b>{{title}}</b></h4> <a *ngIf="displayLink" [routerLink]="['/weather/'+code]">Click here to view details</a></span>
+    <img *ngIf="imageUrl" [src]="imageUrl" >
+    <canvas *ngIf="data" id="{{'canva-'+id}}">{{chart}}</canvas>
+  </div>

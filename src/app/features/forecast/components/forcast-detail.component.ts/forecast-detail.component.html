@@ -1,0 +1,19 @@
+<mat-grid-list cols="4" >
+    <mat-grid-tile
+      (click)="null"
+      [colspan]="4"
+      [rowspan]="1">
+      <h1>Forecast Weather metrics for {{currentCityData ? currentCityData.title: 'N/A'}}</h1>
+  </mat-grid-tile>
+  <mat-grid-tile
+      [colspan]="4"
+      [rowspan]="4" *ngIf="currentCityData && currentCityData.content">
+      <wisy-card-stat
+          [title]="currentCityData.title"
+          [data]="currentCityData.content"
+          [id]="currentCityData.id"
+          [code]="currentCityData.code"
+          [displayLink]="false"
+      ></wisy-card-stat>
+  </mat-grid-tile>
+</mat-grid-list>

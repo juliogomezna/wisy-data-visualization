@@ -1,7 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'weather',
+    pathMatch: 'full'
+  },
+  {
+    path: 'weather',
+    loadChildren: () => import('./features/forecast/forecast.module').then(m => m.ForecastModule)
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
